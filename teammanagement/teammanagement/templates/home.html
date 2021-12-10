@@ -1,0 +1,126 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+    {% block extra_css %}
+        <style>
+
+
+            /* Google font */
+            @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+
+            #clock {
+            {#background-color: #0A246A;#} position: absolute;
+
+                font-family: 'Orbitron', sans-serif;
+                color: #66ff99;
+                font-size: 25px;
+                text-align: center;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                position: center;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+            }
+        </style>
+    {% endblock %}
+
+    <header id="header">
+        <div class="headerbar">
+            <div class="headerbar-left">
+                <ul class="header-nav header-nav-options">
+                    <li class="header-nav-brand">
+                        <div class="brand-holder">
+                        </div>
+                    </li>
+                    <li>
+                        <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
+                           href="javascript:void(0);">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="headerbar-center">
+                {#                <div id="clock"></div>#}
+
+            </div>
+
+
+            <div class="headerbar-right">
+                <ul class="header-nav header-nav-options">
+                    <li>
+
+                    </li>
+                </ul>
+                <!--end .header-nav-options -->
+
+                <ul class="header-nav header-nav-profile">
+                    <li class="dropdown">
+
+
+                        <!--end .dropdown-menu -->
+                    </li>
+                    <!--end .dropdown -->
+                </ul>
+                <!--end .header-nav-profile -->
+            </div>
+
+
+            <!--end #header-navbar-collapse -->
+        </div>
+
+    </header>
+
+    <!-- END HEADER-->
+
+    <!-- BEGIN BASE-->
+    <div id="base">
+        <div class="offcanvas">
+        </div>
+        {% block maincontent %}
+
+        {% endblock maincontent %}
+        <div id="menubar" class="menubar-inverse " style="background: #2b323a;">
+
+            <div class="menubar-scroll-panel">
+                <ul id="main-menu" class="gui-controls">
+                    <li class="">
+                        <a href="">
+                            <div class="gui-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+
+                            <span class="title">Team Management</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    {% block extra_js %}
+
+        <script>
+
+            function startTime() {
+                var today = new Date().toLocaleString('en-GB', {timeZone: 'Europe/London'});
+
+                document.getElementById('txt').innerHTML = today;
+                var t = setTimeout(startTime, 500);
+            }
+
+
+        </script>
+
+    {% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "home.html" %}
+{% load customtags %}
+
+{% block maincontent %}
+<div id="content">
+    <section>
+        <div class="section-header">
+            <ol class="breadcrumb">
+                <li><a href="">Bet Accounts</a></li>
+                <li class="active">Add Account</li>
+            </ol>
+        </div>
+        <div class="section-body">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form" action="{% if object %}
+                        {% url 'bets:update_account' object.id %}
+                        {% else %}{% url 'bets:add_account' %}
+                        {% endif %}" method="POST">{% csrf_token %}
+                        {% for field in form %}
+                        {{ field.label | replace_bids}}
+
+                        {{ field }}
+                        <br>
+                        {{ field.errors }}
+                        <br>
+                        {% endfor %}
+                        <div class="form-group">
+                            <input type="submit" id="submit" class="btn btn-success" value="Save">
+                            <a href="{% url 'bets:betwebsites' %}" class="btn btn-primary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+{% block extra_js %}
+
+
+
+<script>
+    $(document).ready(function () {
+        $('[name="account_type"]').select2(
+            { dropdownAutoWidth: true }
+        );
+    });
+
+
+
+
+</script>
+{% endblock %}
+
+{% endblock maincontent %}
