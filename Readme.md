@@ -3,6 +3,9 @@
 ### Team Member Management Application
 
     Submitted by Amit Upreti
+    
+    
+![screen-capture](https://user-images.githubusercontent.com/24412619/145530245-7facd01b-ab7a-4d0f-8d27-d92f7ed02d89.gif)
 
 
 ## Installation
