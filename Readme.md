@@ -8,7 +8,7 @@
 ## Installation
 
 
-##$ Installation Instructions
+### Installation Instructions
 
 1. Update the server and install python dependencies(Linux/Debian Distros)
     ```shell
