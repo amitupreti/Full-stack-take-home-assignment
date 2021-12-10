@@ -42,7 +42,7 @@
                                             <span class="label label-success">Admin</span>
                                         {% endif %}
 
-{#
+
                                         </td>
 
                                         <td>{{ team.phone }}</td>
@@ -52,10 +52,10 @@
 
 
                                         <td>
-                                            <a href="" class="btn btn-default">
+                                            <a href="{% url 'teams:update_team' team.pk %}" class="btn btn-default">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
-                                            <a href="" data-toggle="modal" data-target="#pfModal" class="btn btn-danger">
+                                            <a href="{% url 'teams:delete_team' team.pk %}" data-toggle="modal" data-target="#pfModal" class="btn btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>

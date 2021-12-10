@@ -20,5 +20,18 @@ class ListTeamView(ListView):
 class AddTeamView(CreateView):
     model = Team
     form_class = TeamForm
-    template_name = 'teams/create_account.html'
+    template_name = 'teams/create_team.html'
+    success_url = reverse_lazy('teams:list_teams')
+
+
+class UpdateTeamView(UpdateView):
+    model = Team
+    form_class = TeamForm
+    template_name = 'teams/create_team.html'
+    success_url = reverse_lazy('teams:list_teams')
+
+
+class DeleteTeamView(DeleteView):
+    model = Team
+    template_name = 'teams/delete_team.html'
     success_url = reverse_lazy('teams:list_teams')
