@@ -16,14 +16,4 @@ class TeamForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in iter(self.fields):
-            # print(field)
-            if field in ['role']:
-                self.fields[field].widget.attrs.update(
-                    {'data-toggle': 'toggle'})
-                self.fields[field].widget.attrs.update({'data-size': 'big'})
-                self.fields[field].widget.attrs.update(
-                    {'style': 'text-decoration:none!important;'})
-
-            else:
-                self.fields[field].widget.attrs.update(
-                    {'class': 'form-control'})
+            self.fields[field].widget.attrs.update({'class': 'form-control'})
